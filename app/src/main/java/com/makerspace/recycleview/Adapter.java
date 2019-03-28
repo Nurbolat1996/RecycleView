@@ -63,14 +63,26 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             tvCardTitle = itemView.findViewById(R.id.tv_card_title);
             btnRun = itemView.findViewById(R.id.btn_run);
             btnRun.setOnClickListener(this);
+            MyViewHolder myholder = this;
+
         }
 
         @Override
         public void onClick(View v) {
-            Intent myIntent = new Intent(mContext,RunActivity.class);
-            myIntent.putExtra("ORGANIZATION","some organization");
-            mContext.startActivity(myIntent);
-            Toast.makeText(mContext, ""+getLayoutPosition(), Toast.LENGTH_SHORT).show();
+            Intent runActivity = new Intent(mContext, RunActivity.class);
+
+            int position = getLayoutPosition();
+            String message = "";
+
+            //set message by position
+            switch (position){
+                case 0: message = "animal"; break;
+                case 1: message = "kids"; break;
+                case 2: message = "air"; break;
+                case 3: message = "grandma"; break;
+            }
+            runActivity.putExtra("clickedItemInList",message);
+            mContext.startActivity(runActivity);
         }
     }
 }
