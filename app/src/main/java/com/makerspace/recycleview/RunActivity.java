@@ -1,9 +1,12 @@
 package com.makerspace.recycleview;
 
 import android.media.Image;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +32,7 @@ public class RunActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_run);
         String clickedItemInList = getIntent().getStringExtra("clickedItemInList");
-
+        /*
         textView = findViewById(R.id.tv_run_organization);
         imageView = findViewById(R.id.imageView);
 
@@ -62,5 +65,8 @@ public class RunActivity extends AppCompatActivity {
 
 // Add the request to the RequestQueue.
         queue.add(stringRequest);
+        */
+
     }
+
 }
